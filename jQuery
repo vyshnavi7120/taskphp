@@ -1,0 +1,13 @@
+$(document).ready(function(){
+    $(".input-data").on("change", function(){
+        <?php $id_user = "$(this).val()"; ?>
+
+        <?php $data = mysql_query("SELECT * FROM formdata WHERE id_user = '$id_user'") or die (mysql_error()); ?>
+        <?php while($row = mysql_fetch_object($data)): ?>
+            $(".output-id").val(<?php $row->id_user ?>);
+            $(".output-name").val(<?php $row->name ?>);
+            $(".output-city").val(<?php $row->city ?>);
+            $(".output-occupation").val(<?php $row->occupation ?>);3
+        <?php endwhile; ?>
+    });
+});
