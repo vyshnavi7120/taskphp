@@ -7,7 +7,7 @@ $(document).ready(function(){
             $(".output-id").val(<?php $row->id_user ?>);
             $(".output-name").val(<?php $row->name ?>);
             $(".output-city").val(<?php $row->city ?>);
-            $(".output-occupation").val(<?php $row->occupation ?>);3
+            $(".output-occupation").val(<?php $row->occupation ?>);
         <?php endwhile; ?>
     });
 });
