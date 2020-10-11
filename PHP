@@ -8,5 +8,5 @@
     mysql_select_db($db);
 
     $user = '';
-    $query = mysql_query("SELECT * FROM tb_payment") or die (mysql_error());
+    $query = mysql_query("SELECT * FROM formdata") or die (mysql_error());
 ?>
