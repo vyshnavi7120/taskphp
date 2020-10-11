@@ -1,0 +1,12 @@
+<?php
+    $host = 'localhost';
+    $user = 'test';
+    $pass = 'Asdf@1234';
+    $db = 'test';
+
+    mysql_connect($host, $user, $pass);
+    mysql_select_db($db);
+
+    $user = '';
+    $query = mysql_query("SELECT * FROM tb_payment") or die (mysql_error());
+?>
