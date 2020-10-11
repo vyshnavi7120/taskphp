@@ -1,0 +1,28 @@
+<select name="student" class="input-data">
+    <option value="">-- SELECT STUDENT --</option>
+    <!-- Do loop data from database -->
+    <?php while ($row = mysql_fetch_object($query)): ?>
+        <option value="<?php echo $row->id_user ?>">
+            <?php echo $row->name ?>
+        </option>
+    <?php endwhile; ?>
+</select>
+<br />
+<table border=1>
+    <tr>
+        <th>ID</th>
+        <td><input type="text" class="output-id" disabled /></td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td><input type="text" class="output-name" disabled /></td>
+    </tr>
+    <tr>
+        <th>City</th>
+        <td><input type="text" class="output-city" disabled /></td>
+    </tr>
+    <tr>
+        <th>Occupation</th>
+        <td><input type="text" class="output-occupation" disabled /></td>
+    </tr>
+</table>
