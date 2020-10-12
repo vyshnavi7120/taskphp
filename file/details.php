@@ -20,3 +20,4 @@ function buttonElement($btnid, $styleclass, $text, $name, $attr){
     ";
     echo $btn;
 }
+?>
