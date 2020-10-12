@@ -1,7 +1,7 @@
 <?php
 
-require_once ("../crud/php/component.php");
-require_once ("../crud/php/operation.php");
+require_once ("../crud/php/details.php");
+require_once ("../crud/php/data.php");
 ?>
 
 <!doctype html>
@@ -24,30 +24,26 @@ require_once ("../crud/php/operation.php");
 
 <main>
     <div class="container text-center">
-        <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Book Store</h1>
+        <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> formdata </h1>
 
         <div class="d-flex justify-content-center">
             <form action="" method="post" class="w-50">
                 <div class="pt-2">
-                    <?php inputElement("<i class='fas fa-id-badge'></i>","ID", "book_id",setID()); ?>
+                    <?php inputElement("<i class='fas fa-id-badge'></i>","ID", "formdata_id",setID()); ?>
                 </div>
                 <div class="pt-2">
-                    <?php inputElement("<i class='fas fa-book'></i>","Book Name", "book_name",""); ?>
+                    <?php inputElement("<i class='fas fa-book'></i>","Name", "formdata_name",""); ?>
                 </div>
                 <div class="row pt-2">
                     <div class="col">
-                        <?php inputElement("<i class='fas fa-people-carry'></i>","Publisher", "book_publisher",""); ?>
+                        <?php inputElement("<i class='fas fa-people-carry'></i>","City", "formdata_city",""); ?>
                     </div>
                     <div class="col">
-                        <?php inputElement("<i class='fas fa-dollar-sign'></i>","Price", "book_price",""); ?>
+                        <?php inputElement("<i class='fas fa-dollar-sign'></i>","Occupation", "formdata_occupation",""); ?>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center">
-                        <?php buttonElement("btn-create","btn btn-success","<i class='fas fa-plus'></i>","create","data-toggle='tooltip' data-placement='bottom' title='Create'"); ?>
-                        <?php buttonElement("btn-read","btn btn-primary","<i class='fas fa-sync'></i>","read","data-toggle='tooltip' data-placement='bottom' title='Read'"); ?>
-                        <?php buttonElement("btn-update","btn btn-light border","<i class='fas fa-pen-alt'></i>","update","data-toggle='tooltip' data-placement='bottom' title='Update'"); ?>
-                        <?php buttonElement("btn-delete","btn btn-danger","<i class='fas fa-trash-alt'></i>","delete","data-toggle='tooltip' data-placement='bottom' title='Delete'"); ?>
-                        <?php deleteBtn();?>
+                        <?php buttonElement("btn-create","btn btn-success","<i class='fas fa-plus'></i>","save details","data-toggle='tooltip' data-placement='bottom' title='saveddata'"); ?>
                 </div>
             </form>
         </div>
@@ -58,40 +54,11 @@ require_once ("../crud/php/operation.php");
                 <thead class="thead-dark">
                     <tr>
                         <th>ID</th>
-                        <th>Book Name</th>
-                        <th>Publisher</th>
-                        <th>Book Price</th>
-                        <th>Edit</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Occupation</th>
                     </tr>
                 </thead>
-                <tbody id="tbody">
-                   <?php
-
-
-                   if(isset($_POST['read'])){
-                       $result = getData();
-
-                       if($result){
-
-                           while ($row = mysqli_fetch_assoc($result)){ ?>
-
-                               <tr>
-                                   <td data-id="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></td>
-                                   <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_name']; ?></td>
-                                   <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_publisher']; ?></td>
-                                   <td data-id="<?php echo $row['id']; ?>"><?php echo '$' . $row['book_price']; ?></td>
-                                   <td ><i class="fas fa-edit btnedit" data-id="<?php echo $row['id']; ?>"></i></td>
-                               </tr>
-
-                   <?php
-                           }
-
-                       }
-                   }
-
-
-                   ?>
-                </tbody>
             </table>
         </div>
 
@@ -104,6 +71,6 @@ require_once ("../crud/php/operation.php");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script src="../crud/php/main.js"></script>
+<script src="../crud/php/file.js"></script>
 </body>
 </html>
