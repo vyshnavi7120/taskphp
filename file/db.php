@@ -1,31 +1,28 @@
 <?php
 
 function Createdb(){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "bookstore";
+    $host = "localhost";
+    $user = "test";
+    $password = "Asdf@1234";
+    $dbname = "test";
 
-    // create connection
-    $con = mysqli_connect($servername, $username, $password);
+    $con = mysqli_connect($host, $user, $password);
 
-    // Check Connection
     if (!$con){
         die("Connection Failed : " . mysqli_connect_error());
     }
 
-    // create Database
     $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 
     if(mysqli_query($con, $sql)){
-        $con = mysqli_connect($servername, $username, $password, $dbname);
+        $con = mysqli_connect($host, $user, $password, $dbname);
 
         $sql = "
-                        CREATE TABLE IF NOT EXISTS books(
-                            id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                            book_name VARCHAR (25) NOT NULL,
-                            book_publisher VARCHAR (20),
-                            book_price FLOAT 
+                        CREATE TABLE IF NOT EXISTS formdata(
+                            id INT(11) PRIMARY AUTO_INCREMENT,
+                            name varchar(255),
+                            city varchar(100),
+                            occupation  varchar(255)
                         );
         ";
 
@@ -40,3 +37,4 @@ function Createdb(){
     }
 
 }
+?>
