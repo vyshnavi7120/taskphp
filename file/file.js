@@ -1,4 +1,4 @@
-let id = $("input[name*='book_id']")
+let id = $("input[name*='formdata_id']")
 id.attr("readonly","readonly");
 
 
@@ -6,14 +6,14 @@ $(".btnedit").click( e =>{
     let textvalues = displayData(e);
 
     ;
-    let bookname = $("input[name*='book_name']");
-    let bookpublisher = $("input[name*='book_publisher']");
-    let bookprice = $("input[name*='book_price']");
+    let formdataname = $("input[name*='formdata_name']");
+    let formdatacity = $("input[name*='formdata_city']");
+    let formdataoccupation = $("input[name*='formdata_occupation']");
 
     id.val(textvalues[0]);
-    bookname.val(textvalues[1]);
-    bookpublisher.val(textvalues[2]);
-    bookprice.val(textvalues[3].replace("$", ""));
+    formdataname.val(textvalues[1]);
+    formdatacity.val(textvalues[2]);
+    formdataoccupation.val(textvalues[3]);
 });
 
 
@@ -30,3 +30,4 @@ function displayData(e) {
     return textvalues;
 
 }
+?>
